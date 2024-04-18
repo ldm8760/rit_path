@@ -19,8 +19,8 @@ test_text = "INTB-300 Cross-Cultural Management Description (Prerequisites: INTB
 
 text = "Your text here with cccc-nnn patterns, cccc-111, and also (cccc-nnn) abcd-123."
 
-course = Course(text).get_code()
-print(course)
+# course = Course(text).get_code()
+# print(course)
 
 text = "INTB-300 Your text here with cccc-123 patterns, (exclude this) cccc-111, and also (also exclude this) (cccc-123)."
 

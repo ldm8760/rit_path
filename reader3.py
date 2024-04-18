@@ -27,7 +27,7 @@ class reader3:
         full = '\s*?(\w{4}-\d+)\s(.*?)\n([\w\W\s]+?)\s+?(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)(?:\s*?(\d))?.{0,2}(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)?(?:\s*?(\d))?.{0,2}\s*?Credits\s*?(\d|\d+ - \d+)\s+?\((Fall|Spring|Summer|Fall,\s*?Spring|Spring,\s*?Summer|Fall,\s*?Spring,\s*?Summer|Biannual)\)'
         pattern = re.compile(rf'{full}')
         matches = re.findall(pattern, text)
-        print(len(matches))
+        # print(len(matches))
         return matches
             
 def main():
