@@ -54,7 +54,7 @@ as they relate to course subject matter. (Prerequisites: ACCT-210 or NACC-206 or
 course.)  Lecture 3, Credits 3 (Fall)
 ACCT-365 Intermediate Financial Accounting II
 In-depth consideration of generally accepted accounting principles and theory as they apply 
-to the recognition and measurement of common liabilities and stockholders’ equity, as well 
+to the recognition and measurement of common liabilities and stockholdersï¿½ equity, as well 
 as income taxes, pensions and leases. Issues related to dilutive securities, earnings per share, 
 accounting changes, revenue recognition, and the statement of cash flows are also addressed. 
 International Financial Reporting Standards are introduced as they relate to course subject 
@@ -101,7 +101,7 @@ ACCT-490 Auditing
 A study of the legal, ethical, and technical environment in which the auditor works. Current 
 auditing theory, standards, procedures, and techniques are studied. The audit process is stud -
 ied to ascertain how it leads to the development of an audit opinion. The Sarbanes-Oxley Act 
-and internal control issues are examined. Students are also introduced to accountants’ pro -
+and internal control issues are examined. Students are also introduced to accountantsï¿½ pro -
 fessional responsibility. (Prerequisites: ACCT-365 or equivalent course.)  Lecture 3, Credits 
 3 (Fall, Spring)
 ACCT-499 Accounting Co-op

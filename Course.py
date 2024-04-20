@@ -1,5 +1,6 @@
 import re
-from reader3 import reader3
+from reader3 import MatchMaker
+import threading
 
 class University:
     def __init__(self) -> None:
@@ -7,8 +8,8 @@ class University:
 
     def __repr__(self) -> str:
         result = ""
-        for key, value in self.__courseDict.items():
-            result += f"{key} {value}\n"
+        for value in self.__courseDict.values():
+            result += f"{value}\n\n"
         return result
 
     def addCourse(self, course: 'Course') -> None:
@@ -16,6 +17,34 @@ class University:
 
     def getCourse(self, code: str) -> 'Course':
         return self.__courseDict.get(code) # type: ignore
+
+
+class TemporaryPrereqs:
+    def __init__(self) -> None:
+        self.__course: Course
+        self.__tempCourse: dict[str, list[str]] = {}
+
+    def addTempPreReq(self, course: 'Course') -> None:
+        self.__course = course
+        self.__tempCourse[self.__course.getCode()] = self.__setTempPrerequisites()
+
+    def __repr__(self) -> str:
+        res = ""
+        for key, value in self.__tempCourse.items():
+            res += f'{key}, {value}\n'
+        return res
+    
+    def getTemps(self) -> dict[str, list[str]]:
+        return self.__tempCourse
+
+    def __setTempPrerequisites(self) -> list[str]:
+        res = []
+        desc = self.__course.getDescription()
+        pattern = re.compile(r'(\w{4}-\d+)')
+        matches = re.findall(pattern, desc)
+        for tempCourse in matches:
+            res.append(tempCourse)
+        return res
 
 class Course:
     def __init__(self, code: str, title: str, description: str, classType1Hours: dict[str, int], 
@@ -30,7 +59,7 @@ class Course:
         self.__credits: int = int(credits)
         self.__season: str = season
         self.__rit: University = University()
-        self.setPrerequisites()
+        # self.setPrerequisites()
 
     def __repr__(self) -> str:
         repr_string = (
@@ -47,7 +76,7 @@ class Course:
     
     def setPrerequisites(self) -> None:
         desc = self.getDescription()
-        pattern = re.compile(f'(\w{4}-\d+)')
+        pattern = re.compile(r'(\w{4}-\d+)')
         matches = re.findall(pattern, desc)
         for course in matches:
             prereq = self.__rit.getCourse(course)
@@ -76,14 +105,17 @@ class Course:
         return self.__prerequisites.__contains__(other)
     
 def main():
-    results = reader3()
-    results.read()
+    results = MatchMaker()
+    results.readFile()
     text = results.getContents()
-    preCourses = results.analyze(text)
     postCourses = University()
-    for course in preCourses:
-        postCourses.addCourse(Course(course[0], course[1], course[2], {course[3]: course[4]}, {course[5]: course[6]}, course[7], course[8])) # type: ignore
-    print(postCourses)
+    tempReqList = TemporaryPrereqs()
+    for course in text:
+        newCourse = Course(course[0], course[1], course[2], {course[3]: course[4]}, {course[5]: course[6]}, course[7], course[8]) # type: ignore
+        tempReqList.addTempPreReq(newCourse)
+    print(tempReqList)
+    # for temp in tempReqList.getTemps():
+    #     print(temp)
 
     
 if __name__ == "__main__":
