@@ -1,6 +1,5 @@
 import re
-from reader3 import MatchMaker
-import threading
+from MatchMaker import MatchMaker
 
 class University:
     def __init__(self) -> None:
@@ -18,39 +17,14 @@ class University:
     def getCourse(self, code: str) -> 'Course':
         return self.__courseDict.get(code) # type: ignore
 
-
-class TemporaryPrereqs:
-    def __init__(self) -> None:
-        self.__course: Course
-        self.__tempCourse: dict[str, list[str]] = {}
-
-    def addTempPreReq(self, course: 'Course') -> None:
-        self.__course = course
-        self.__tempCourse[self.__course.getCode()] = self.__setTempPrerequisites()
-
-    def __repr__(self) -> str:
-        res = ""
-        for key, value in self.__tempCourse.items():
-            res += f'{key}, {value}\n'
-        return res
-    
-    def getTemps(self) -> dict[str, list[str]]:
-        return self.__tempCourse
-
-    def __setTempPrerequisites(self) -> list[str]:
-        res = []
-        desc = self.__course.getDescription()
-        pattern = re.compile(r'(\w{4}-\d+)')
-        matches = re.findall(pattern, desc)
-        for tempCourse in matches:
-            res.append(tempCourse)
-        return res
-
 class Course:
-    def __init__(self, code: str, title: str, description: str, classType1Hours: dict[str, int], 
+
+    def __init__(self, code: str):
+        self.__code: str = code
+
+    def format_to_course(self, title: str, description: str, classType1Hours: dict[str, int], 
                  classType2Hours: dict[str, int] = {}, credits: str = "3", season: str = "Fall") -> None:
         
-        self.__code: str = code
         self.__title: str = title
         self.__description: str = description
         self.__prerequisites: set[Course] = set()
@@ -105,17 +79,7 @@ class Course:
         return self.__prerequisites.__contains__(other)
     
 def main():
-    results = MatchMaker()
-    results.readFile()
-    text = results.getContents()
-    postCourses = University()
-    tempReqList = TemporaryPrereqs()
-    for course in text:
-        newCourse = Course(course[0], course[1], course[2], {course[3]: course[4]}, {course[5]: course[6]}, course[7], course[8]) # type: ignore
-        tempReqList.addTempPreReq(newCourse)
-    print(tempReqList)
-    # for temp in tempReqList.getTemps():
-    #     print(temp)
+    pass
 
     
 if __name__ == "__main__":
