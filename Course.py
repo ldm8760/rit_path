@@ -36,7 +36,6 @@ class Course:
         self.__classType2Hours: dict[str, int] = classType2Hours
         self.__credits: int = int(credits)
         self.__season: str = season
-        self.__rit: University = University()
         # self.setPrerequisites()
 
     def __repr__(self) -> str:
@@ -52,12 +51,17 @@ class Course:
         )
         return repr_string
     
-    def setPrerequisites(self) -> None:
+    def setPrerequisites(self, uni: 'University') -> None:
         desc = self.getDescription()
-        pattern = re.compile(r'(\w{4}-\d+)')
-        matches = re.findall(pattern, desc)
+        valid_text_finder = re.compile(r'(\(Prerequisites:.*)')
+        valid_text = re.search(valid_text_finder, desc)
+        if valid_text:
+            pattern = re.compile(r'(\w{4}-\d+)')
+            matches = re.findall(pattern, valid_text.group(0))
+        else:
+            matches = []
         for course in matches:
-            prereq = self.__rit.getCourse(course)
+            prereq = uni.getCourse(course)
             self.addPreRequisite(prereq)
 
     # Getter methods
@@ -87,11 +91,15 @@ def main():
     text_courses = matches.readFile()
     uni = University()
 
-    for text_course in text_courses:
-        uni.addCourse(Course(text_course[0]))
+    for tc in text_courses:
+        course = Course(tc[0])
+        course.format_to_course(tc[1], tc[2], {tc[3]: int(tc[4]) if len(tc[4]) > 0 else 0}, {tc[5]: int(tc[6]) if len(tc[6]) > 0 else 0}, tc[7], tc[8])
+        uni.addCourse(course)
 
+    course1 = uni.getCourse("ACCT-210")
+    course1.setPrerequisites(uni)
+    print(course1)
 
-    
 if __name__ == "__main__":
     main()
     
