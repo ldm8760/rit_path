@@ -17,8 +17,12 @@ class University:
     def getCourse(self, code: str) -> 'Course':
         return self.__courseDict.get(code) # type: ignore
 
-class Course:
 
+# code-123
+# Course title
+# Description
+
+class Course:
     def __init__(self, code: str):
         self.__code: str = code
 
@@ -79,7 +83,13 @@ class Course:
         return self.__prerequisites.__contains__(other)
     
 def main():
-    pass
+    matches = MatchMaker()
+    text_courses = matches.readFile()
+    uni = University()
+
+    for text_course in text_courses:
+        uni.addCourse(Course(text_course[0]))
+
 
     
 if __name__ == "__main__":

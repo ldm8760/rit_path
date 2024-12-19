@@ -3,10 +3,7 @@ import re
 class MatchMaker:
     def __init__(self) -> None:
         self.__FILENAME: str = "threadTest.txt" # 75 courses
-        self.__contents: list[str] = self.readFile()
-
-    def getContents(self) -> list[str]:
-        return self.__contents
+        # self.__contents: list[str] = self.readFile()
 
     def readFile(self) -> list[str]:
         with open(self.__FILENAME, "r") as file:
