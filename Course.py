@@ -16,6 +16,10 @@ class University:
 
     def getCourse(self, code: str) -> 'Course':
         return self.__courseDict.get(code) # type: ignore
+    
+    def printAll(self) -> None:
+        courselist = [course for course, info in self.__courseDict.items()]
+        print(courselist)
 
 
 # code-123
@@ -31,7 +35,7 @@ class Course:
         
         self.__title: str = title
         self.__description: str = description
-        self.__prerequisites: set[Course] = set()
+        self.__prerequisites: tuple = tuple()
         self.__classType1Hours: dict[str, int] = classType1Hours
         self.__classType2Hours: dict[str, int] = classType2Hours
         self.__credits: int = int(credits)
@@ -56,13 +60,17 @@ class Course:
         valid_text_finder = re.compile(r'(\(Prerequisites:.*)')
         valid_text = re.search(valid_text_finder, desc)
         if valid_text:
-            pattern = re.compile(r'(\w{4}-\d+)')
-            matches = re.findall(pattern, valid_text.group(0))
+            valid_text = valid_text.group(0)
+            valid_text.replace("Prerequisites:", "")
+            self.__setPrereqHelper(valid_text)        
         else:
-            matches = []
-        for course in matches:
-            prereq = uni.getCourse(course)
-            self.addPreRequisite(prereq)
+            pass
+
+    def __setPrereqHelper(self, text) -> str|None:
+        and_condition = [cond.strip() for cond in re.split(r'\band\b', text)]
+        or_condition = [cond.strip() for cond in re.split(r'\bor\b', text)]
+        print(and_condition)
+        print(or_condition)
 
     # Getter methods
     def getCode(self) -> str:
@@ -74,14 +82,14 @@ class Course:
     def getDescription(self) -> str:
         return self.__description
     
-    def getPreRequisites(self) -> set['Course']:
-        return self.__prerequisites
+    # def getPreRequisites(self) -> set['Course']:
+    #     return self.__prerequisites
 
-    def addPreRequisite(self, other: 'Course') -> None:
-        self.__prerequisites.add(other)
+    # def addPreRequisite(self, other: 'Course') -> None:
+    #     self.__prerequisites.add(other)
 
-    def removePreRequisite(self, other: 'Course') -> None:
-        self.__prerequisites.remove(other)
+    # def removePreRequisite(self, other: 'Course') -> None:
+    #     self.__prerequisites.remove(other)
 
     def hasPrerequisite(self, other: 'Course') -> bool:
         return self.__prerequisites.__contains__(other)
@@ -98,7 +106,8 @@ def main():
 
     course1 = uni.getCourse("ACCT-210")
     course1.setPrerequisites(uni)
-    print(course1)
+    # print(course1)
+    uni.printAll()
 
 if __name__ == "__main__":
     main()
