@@ -1,20 +1,18 @@
 import re
+import csv
 
-class MatchMaker:
-    def __init__(self) -> None:
-        self.__FILENAME: str = "threadTest.txt" # 75 courses
-        self.__contents: list[str] = self.readFile()
+INPUT_FILE = "textdump.txt"
 
-    def getContents(self) -> list[str]:
-        return self.__contents
+def makeMatches(text: str) -> None: 
+    full = r'\s*?(\w{4}-\d{3}|\w{4}-\d{3}H)\s(.*?)\n([\w\W\s]+?)\s+?(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP|Studio|Activity)(?:\s*?(\d))?.{0,2}(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)?(?:\s*?(\d))?.{0,2}\s*?Credits\s*?(\d|\d+ - \d+)\s+?\((Fall|Spring|Summer|Fall,\s*?Spring|Spring,\s*?Summer|Fall,\s*?Spring,\s*?Summer|Fall or Spring|Biannual)\)'
+    pattern = re.compile(f'{full}')
+    matches = re.findall(pattern, text)
+    with open("data.csv", "w", encoding="utf-8") as f:
+        csvwrtiter = csv.writer(f)
+        csvwrtiter.writerow(["Code", "Title", "Description", "Class1Type", "Class1TypeHours", "Class2Type", "Class2TypeHours", "Credits", "Season"])
+        csvwrtiter.writerows(matches)
 
-    def readFile(self) -> list[str]:
-        with open(self.__FILENAME, "r") as file:
-            content = file.read()
-        return self.makeMatches(content)
-
-    def makeMatches(self, text: str) -> list[str]: 
-        full = r'\s*?(\w{4}-\d+)\s(.*?)\n([\w\W\s]+?)\s+?(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)(?:\s*?(\d))?.{0,2}(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)?(?:\s*?(\d))?.{0,2}\s*?Credits\s*?(\d|\d+ - \d+)\s+?\((Fall|Spring|Summer|Fall,\s*?Spring|Spring,\s*?Summer|Fall,\s*?Spring,\s*?Summer|Biannual)\)'
-        pattern = re.compile(f'{full}')
-        matches = re.findall(pattern, text)
-        return matches
+if __name__ == "__main__":
+    with open(INPUT_FILE, "r", encoding="utf-8") as file:
+        content = file.read()
+    makeMatches(content)

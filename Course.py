@@ -1,6 +1,4 @@
 import re
-from reader3 import MatchMaker
-import threading
 
 class University:
     def __init__(self) -> None:
@@ -46,8 +44,13 @@ class TemporaryPrereqs:
             res.append(tempCourse)
         return res
 
+def matchToCourse(match: tuple) -> 'Course':
+    newCourse = Course(match[0], match[1], match[2], {match[3]: int(match[4])}, {match[5]: int(match[6])}, match[7], match[8])
+    return newCourse
+
+
 class Course:
-    def __init__(self, code: str, title: str, description: str, classType1Hours: dict[str, int], 
+    def __init__(self, code: str, title: str, description: str, classType1Hours: dict[str, int],
                  classType2Hours: dict[str, int] = {}, credits: str = "3", season: str = "Fall") -> None:
         
         self.__code: str = code
@@ -58,7 +61,6 @@ class Course:
         self.__classType2Hours: dict[str, int] = classType2Hours
         self.__credits: int = int(credits)
         self.__season: str = season
-        self.__rit: University = University()
         # self.setPrerequisites()
 
     def __repr__(self) -> str:
@@ -74,13 +76,28 @@ class Course:
         )
         return repr_string
     
+    def to_dict(self) -> dict:
+        return {
+            "code": self.__code,
+            "title": self.__title,
+            "description": self.__description,
+            "prerequisites": [course.to_dict() for course in self.__prerequisites],
+            "classType1Hours": self.__classType1Hours,
+            "classType2Hours": self.__classType2Hours,
+            "credits": self.__credits,
+            "season": self.__season
+        }
+
+    def writeCourses(self) -> None:
+        pass
+
     def setPrerequisites(self) -> None:
         desc = self.getDescription()
         pattern = re.compile(r'(\w{4}-\d+)')
         matches = re.findall(pattern, desc)
-        for course in matches:
-            prereq = self.__rit.getCourse(course)
-            self.addPreRequisite(prereq)
+        # for course in matches:
+        #     prereq = self.__rit.getCourse(course)
+        #     self.addPreRequisite(prereq)
 
     # Getter methods
     def getCode(self) -> str:
@@ -105,19 +122,10 @@ class Course:
         return self.__prerequisites.__contains__(other)
     
 def main():
-    results = MatchMaker()
-    results.readFile()
-    text = results.getContents()
-    postCourses = University()
-    tempReqList = TemporaryPrereqs()
-    for course in text:
-        newCourse = Course(course[0], course[1], course[2], {course[3]: course[4]}, {course[5]: course[6]}, course[7], course[8]) # type: ignore
-        tempReqList.addTempPreReq(newCourse)
-    print(tempReqList)
-    # for temp in tempReqList.getTemps():
-    #     print(temp)
+    print("Testing")
+    uni = University()
+    # test1 = matchToCourse()
 
-    
 if __name__ == "__main__":
     main()
     
