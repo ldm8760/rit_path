@@ -56,7 +56,7 @@ class Course:
         self.__code: str = code
         self.__title: str = title
         self.__description: str = description
-        self.__prerequisites: set[Course] = set()
+        self.__prerequisites: tuple = tuple()
         self.__classType1Hours: dict[str, int] = classType1Hours
         self.__classType2Hours: dict[str, int] = classType2Hours
         self.__credits: int = int(credits)
@@ -109,14 +109,14 @@ class Course:
     def getDescription(self) -> str:
         return self.__description
     
-    def getPreRequisites(self) -> set['Course']:
-        return self.__prerequisites
+    # def getPreRequisites(self) -> set['Course']:
+    #     return self.__prerequisites
 
-    def addPreRequisite(self, other: 'Course') -> None:
-        self.__prerequisites.add(other)
+    # def addPreRequisite(self, other: 'Course') -> None:
+    #     self.__prerequisites.add(other)
 
-    def removePreRequisite(self, other: 'Course') -> None:
-        self.__prerequisites.remove(other)
+    # def removePreRequisite(self, other: 'Course') -> None:
+    #     self.__prerequisites.remove(other)
 
     def hasPrerequisite(self, other: 'Course') -> bool:
         return self.__prerequisites.__contains__(other)
