@@ -16,9 +16,6 @@ def extract_info():
                 output.writelines(page_text)
                 pageNumber += 1
 
-def main():
+if __name__ == "__main__":
     extract_info()
     print("Complete!")
-
-if __name__ == "__main__":
-    main()
