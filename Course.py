@@ -36,7 +36,7 @@ class Course:
 
     def set_prereqs(self) -> str:
         basic_desc = self.__description.replace("\n", "")
-        basic_text = re.search(r'Prerequisites:\s*?([\w\W\s]*)', basic_desc) # potentially put \) at the end here
+        basic_text = re.search(r'Prerequisites:\s*?([\w\W\s]*)\)', basic_desc)
         if basic_text is not None:
             return basic_text.group(1)
         else:
