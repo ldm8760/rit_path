@@ -1,12 +1,5 @@
 import re
 
-def matchToCourse(match: dict) -> 'Course':
-    newCourse = Course(match["Code"], match["Title"], match["Description"], 
-                       {match["Class1Type"]: (int(match["Class1TypeHours"]) if match["Class1TypeHours"] != '' else 0)}, 
-                       {match["Class2Type"]: (int(match["Class2TypeHours"]) if match["Class2TypeHours"] != '' else 0)}, 
-                       match["Credits"], match["Season"])
-    return newCourse
-
 class Course:
     def __init__(self, code: str, title: str, description: str, classType1Hours: dict[str, int],
                  classType2Hours: dict[str, int] = {}, credits: str = "3", season: str = "Fall") -> None:
