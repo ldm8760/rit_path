@@ -1,53 +1,11 @@
 import re
 
-class University:
-    def __init__(self) -> None:
-        self.__courseDict: dict[str, Course] = dict()
-
-    def __repr__(self) -> str:
-        result = ""
-        for value in self.__courseDict.values():
-            result += f"{value}\n\n"
-        return result
-
-    def addCourse(self, course: 'Course') -> None:
-        self.__courseDict[course.getCode()] = course
-
-    def getCourse(self, code: str) -> 'Course':
-        return self.__courseDict.get(code) # type: ignore
-
-
-class TemporaryPrereqs:
-    def __init__(self) -> None:
-        self.__course: Course
-        self.__tempCourse: dict[str, list[str]] = {}
-
-    def addTempPreReq(self, course: 'Course') -> None:
-        self.__course = course
-        self.__tempCourse[self.__course.getCode()] = self.__setTempPrerequisites()
-
-    def __repr__(self) -> str:
-        res = ""
-        for key, value in self.__tempCourse.items():
-            res += f'{key}, {value}\n'
-        return res
-    
-    def getTemps(self) -> dict[str, list[str]]:
-        return self.__tempCourse
-
-    def __setTempPrerequisites(self) -> list[str]:
-        res = []
-        desc = self.__course.getDescription()
-        pattern = re.compile(r'(\w{4}-\d+)')
-        matches = re.findall(pattern, desc)
-        for tempCourse in matches:
-            res.append(tempCourse)
-        return res
-
-def matchToCourse(match: tuple) -> 'Course':
-    newCourse = Course(match[0], match[1], match[2], {match[3]: int(match[4])}, {match[5]: int(match[6])}, match[7], match[8])
+def matchToCourse(match: dict) -> 'Course':
+    newCourse = Course(match["Code"], match["Title"], match["Description"], 
+                       {match["Class1Type"]: (int(match["Class1TypeHours"]) if match["Class1TypeHours"] != '' else 0)}, 
+                       {match["Class2Type"]: (int(match["Class2TypeHours"]) if match["Class2TypeHours"] != '' else 0)}, 
+                       match["Credits"], match["Season"])
     return newCourse
-
 
 class Course:
     def __init__(self, code: str, title: str, description: str, classType1Hours: dict[str, int],
@@ -56,12 +14,12 @@ class Course:
         self.__code: str = code
         self.__title: str = title
         self.__description: str = description
-        self.__prerequisites: tuple = tuple()
         self.__classType1Hours: dict[str, int] = classType1Hours
         self.__classType2Hours: dict[str, int] = classType2Hours
-        self.__credits: int = int(credits)
+        self.__credits = credits
         self.__season: str = season
-        # self.setPrerequisites()
+        self.__prerequisites: str = self.set_prereqs()
+
 
     def __repr__(self) -> str:
         repr_string = (
@@ -75,29 +33,14 @@ class Course:
             f"Season(s): {self.__season}"
         )
         return repr_string
-    
-    def to_dict(self) -> dict:
-        return {
-            "code": self.__code,
-            "title": self.__title,
-            "description": self.__description,
-            "prerequisites": [course.to_dict() for course in self.__prerequisites],
-            "classType1Hours": self.__classType1Hours,
-            "classType2Hours": self.__classType2Hours,
-            "credits": self.__credits,
-            "season": self.__season
-        }
 
-    def writeCourses(self) -> None:
-        pass
-
-    def setPrerequisites(self) -> None:
-        desc = self.getDescription()
-        pattern = re.compile(r'(\w{4}-\d+)')
-        matches = re.findall(pattern, desc)
-        # for course in matches:
-        #     prereq = self.__rit.getCourse(course)
-        #     self.addPreRequisite(prereq)
+    def set_prereqs(self) -> str:
+        basic_desc = self.__description.replace("\n", "")
+        basic_text = re.search(r'Prerequisites:\s*?([\w\W\s]*)', basic_desc) # potentially put \) at the end here
+        if basic_text is not None:
+            return basic_text.group(1)
+        else:
+            return ""
 
     # Getter methods
     def getCode(self) -> str:
@@ -118,16 +61,8 @@ class Course:
     # def removePreRequisite(self, other: 'Course') -> None:
     #     self.__prerequisites.remove(other)
 
-    def hasPrerequisite(self, other: 'Course') -> bool:
-        return self.__prerequisites.__contains__(other)
-    
-def main():
-    print("Testing")
-    uni = University()
-    # test1 = matchToCourse()
-
-if __name__ == "__main__":
-    main()
+    # def hasPrerequisite(self, other: 'Course') -> bool:
+    #     return self.__prerequisites.__contains__(other)
     
 
     

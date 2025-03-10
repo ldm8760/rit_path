@@ -1935,10 +1935,9 @@ outcomes, milestones, deadlines and deliverables are negotiated and agreed upon 
 the client and the student team. The course focuses on the development of collaboration skills 
 among the team members, and in the differentiation between team objectives and individual 
 goals. Students will learn the process of clear communication with a client in a professional 
-setting. (Prerequisites: DDDD-209 or equivalent course.)  Lab 2, Lecture 2, Credits 3 (Fall 
-or Spring)
-DDDD-304 3D Motion Graphics
-This course addresses the technical and aesthetic concerns in the production of 3D motion 
+setting. (Prerequisites: DDDD-209 or equivalent course.)",Lab,2,Lecture,2,3,"Fall 
+or Spring"
+DDDD-304,3D Motion Graphics,"This course addresses the technical and aesthetic concerns in the production of 3D motion 
 graphics for various implementations, including station identifications for television networks, 
 film titles, public service broadcast, music video, scoreboard graphics and logos for adver -
 tising. The course also examines current trends and implications for future application of 
@@ -2129,10 +2128,9 @@ GRDE-206,Typography II,"Students will expand upon the principles of grid theory,
 page layout, and type and image integration as they relate to a range of design applications: 
 posters, instructional materials, brochures, magazines, books, etc. Visual organization, mes -
 sage communication, and imaging and page layout software skills are integrated in the course. 
-(Prerequisite: GRDE-201 or GRDE-202 or equivalent course.)  Lab 3, Studio 2, Credits 3 (Fall 
-or Spring)
-GRDE-207 Interactive Design I
-This course provides an introduction to interactivity through the study of basic principles and 
+(Prerequisite: GRDE-201 or GRDE-202 or equivalent course.)  Lab 3,",Studio,2,,,3,"Fall 
+or Spring"
+GRDE-207,Interactive Design I,"This course provides an introduction to interactivity through the study of basic principles and 
 methodologies involved in designing digital interfaces. Students will engage in projects where 
 they will investigate, conceptualize and propose innovative interactive solutions to problems 
 through a human-centered design approach. Students will create navigable interfaces and sys -
@@ -2250,10 +2248,9 @@ communication for editorial design. Students will work on interdisciplinary team
 tographers and/or illustrators) to create visual solutions for in-class projects and/or a magazine 
 produced by the class. Design development processes and aspects of production methods will 
 be implemented, and innovative techniques in digital publication design will be explored. 
-(Prerequisites: GRDE-307 and GRDE-308 or equivalent courses.)  Studio 5, Credits 3 (Fall 
-or Spring)
-GRDE-421 Design Systems II
-This course will provide an overview of branding and identity design. Processes, theories, 
+(Prerequisites: GRDE-307 and GRDE-308 or equivalent courses.)",Studio,5,,,3,"Fall 
+or Spring"
+GRDE-421,Design Systems II,"This course will provide an overview of branding and identity design. Processes, theories, 
 design methods, brand strategies, positioning, touch-points, research, and management are 
 introduced in creating comprehensive branding and identity systems. Case studies will pro -
 vide students with historical context. Students will explore current and future trends related 
@@ -3230,10 +3227,9 @@ explore adventurous techniques and mediums such as, but not limited to, direct-o
 cesses, stop motion paint, phenakistoscopes, stratacuts, charcoal/chalk board palimpsests, 
 maximum loop cycles, paper cut-out animation, and sound. By the completion of the course, 
 students will have a thorough understanding of the scope of experimental animation tech -
-niques. (Prerequisite: SOFA-121 or equivalent course.)  Lab 3, Lecture 1, Credits 3 (Fall or 
-Spring)
-SOFA-531 Digital Effects and Compositing
-This course will offer hands-on experience in manipulating live action video and applying 
+niques. (Prerequisite: SOFA-121 or equivalent course.)",Lab,3,Lecture,1,3,"Fall or 
+Spring"
+SOFA-531,Digital Effects and Compositing,"This course will offer hands-on experience in manipulating live action video and applying 
 digital effects. There is an emphasis on digital compositing using rotoscoping, image track -
 ing, alpha channels and transparency. Composites may be accomplished through green screen 
 shooting, transfer modes, masks, and/or traveling mattes. Node based compositing will also 
@@ -8393,9 +8389,14 @@ cuitry. The laboratory component incorporates use of both computer and manually 
 instrumentation including power supplies, signal generators and oscilloscopes to reinforce 
 concepts discussed in class as well as circuit design and simulation software. (Prerequisite: 
 MATH-173 or MATH-182 or MATH-182A or equivalent course.)",Lab,3,Lecture,3,3,"Fall, Spring, Summer"
-EEEE-281,or equivalent course.)  ,"Recitation 2, Credits 0 (Fall, Spring, Summer)
-EEEE-282 Circuits II
-This course covers the fundamentals of AC circuit analysis starting with the study of sinusoi -
+EEEE-281R,Circuits I Recitation,"This course is to be taken concurrently with Circuits I. The focus of the course is to practice 
+problem solving for topics covered in Circuits I. Topics may include use of the calculator for 
+solving multiple equations with multiple unknowns, and use of MATLAB for analyzing prob -
+lems. Worksheets with problems for the students to solve are posted and the instructor then 
+helps individuals as needed before going over the solution. Students are encouraged to work 
+together in small groups. Students also are encouraged to bring up any questions they have 
+on homework problems and on lab work. (Co-requisites: EEEE-281 or equivalent course.)",Recitation,2,,,0,"Fall, Spring, Summer"
+EEEE-282,Circuits II,"This course covers the fundamentals of AC circuit analysis starting with the study of sinusoi -
 dal steady-state solutions for circuits in the time domain. The complex plane is introduced 
 along with the concepts of complex exponential functions, phasors, impedances and admit -
 tances. Nodal, loop and mesh methods of analysis as well as Thevenin and related theorems 
@@ -15798,6 +15799,22 @@ lent course.)",Seminar,3,,,3,"Fall, Spring"
 MLRU-449,Topics in Russian,"An in-depth exploration of the Russian language and culture by focusing the skills/topics that 
 are not regularly covered in sequential regular language courses. Prerequisite: varies; contact 
 the instructor.",Seminar,3,,,3,"Fall, Spring, Summer"
+MLSP-201A,Beginning Spanish IA,"Beginning Spanish IA is for true beginners of Spanish: those who have never studied the lan -
+guage or have very little recollection of it (the latter as acknowledged by placement test results). 
+This course introduces the Spanish language and the culture of Hispanic countries to beginners, 
+and provides a basic foundation in all skills in Spanish (speaking, listening, reading, writing, 
+culture) through intensive practice in a variety of media. Language work progresses from auto -
+biographical information, through the present tense, to preliminary work in the past tenses. 
+Students must take the placement exam if this is their first RIT class in Spanish and they have 
+some prior study of Spanish. (Pre-requisite: Students must have a score of .88 on the Spanish 
+Language Placement Exam.)",Seminar,4,,,4,"Fall, Spring, Summer"
+MLSP-201B,Beginning Spanish IB,"This course is for students who have previously studied Spanish in high school or elsewhere 
+but who do not know the past tenses as determined by placement test results. The course 
+strengthens students’ foundation in all skills in Spanish (speaking, listening, reading, writing, 
+culture) through intensive practice in a variety of media. Language work progresses from auto -
+biographical information, through the present tense, to preliminary work in the past tenses. 
+Students must take the placement exam if this is their first RIT class in Spanish. (Prerequisites: 
+Students must have a score of .99 of the RIT Language Placement Exam.)",Seminar,4,,,4,"Fall, Spring"
 MLSP-202,Beginning Spanish II,"This course continues the basic grammatical structures, vocabulary and situations of first-
 year Spanish, with foundation work in all skills (speaking, listening, reading, writing, culture). 
 Beginning Spanish II continues work in the past tenses and includes work on the subjunctive 
@@ -24766,8 +24783,19 @@ ferentiation, applications of the derivative, Riemann sums, definite integrals, 
 integrals. (Prerequisites: MATH-111 or (NMTH-220 and NMTH-260 or NMTH-272 or NMTH-
 275) or equivalent courses with a minimum grade of B-, or a score of at least 60% on the RIT 
 Mathematics Placement Exam.Co-requisites: MATH-181R or equivalent course.)",Lecture,6,,,4,"Fall, Spring"
-MATH-111,or B- or better in ((NMTH-260 or NMTH-272 or NMTH-275) and NMTH-220) ,or a math placement exam greater than or equal to 60.),Lecture,6,,,4,"Fall, Spring"
-MATH-181,are required to enroll in MATH-181R concurrently. (Prerequisites: MATH-111 ,"or (NMTH-220 and NMTH-260 or NMTH-272 or NMTH-275) or equivalent courses with a 
+MATH-181A,Calculus I,"This is the first in a two-course sequence intended for students majoring in mathematics, sci -
+ence, or engineering. The course includes the same topics as MATH-181, but the focus of the 
+workshop component is different. Whereas workshops attached to 181 emphasize concept 
+development and real-world applications, the workshops of MATH-181A emphasize skill devel -
+opment and provide just-in-time review of precalculus material as needed. The course covers 
+functions, limits, continuity, the derivative, rules of differentiation, applications of the deriva -
+tive, Riemann sums, definite integrals, and indefinite integrals. (Prerequisite:  B- or better in 
+MATH-111 or B- or better in ((NMTH-260 or NMTH-272 or NMTH-275) and NMTH-220) 
+or a math placement exam greater than or equal to 60.)",Lecture,6,,,4,"Fall, Spring"
+MATH-181R,Calculus I Recitation,"This course is a weekly recitation devoted to skill development and just-in-time review of cal -
+culus material as needed. The 'as needed' is determined by weekly online assessments. Students 
+in MATH-181 are required to enroll in MATH-181R concurrently. (Prerequisites: MATH-111 
+or (NMTH-220 and NMTH-260 or NMTH-272 or NMTH-275) or equivalent courses with a 
 minimum grade of B-, or a score of at least 60% on the RIT Mathematics Placement Exam.
 Co-requisites: MATH-181 or equivalent course.)",Recitation,1,,,0,"Fall, Spring"
 MATH-182,Calculus II,"This is the second in a two-course sequence. It emphasizes the understanding of concepts, and 
@@ -24776,8 +24804,17 @@ integration by parts, partial fractions, improper integrals, applications of int
 senting functions by infinite series, convergence and divergence of series, parametric curves, 
 and polar coordinates. (Prerequisites: C- or better in MATH-181 or MATH-181A or equivalent 
 course.)",Lecture,6,,,4,"Fall, Spring"
-MATH-182,"or equivalent course.)  Recitation 1, Credits 0 (Fall, Spring)","MATH-185 Mathematics of Graphical Simulation I
-This is the first part of a two course sequence that aims at providing the mathematical tools 
+MATH-182A,Calculus II,"This is the second in a two-course sequence intended for students majoring in mathematics, 
+science, or engineering. The course includes the same topics as MATH-182, but the focus of 
+the workshop component is different. Whereas workshops attached to 182 emphasize con -
+cept development and real-world applications, the workshops of MATH-182A emphasize skill 
+development and provide just-in-time review of precalculus material as needed. The course 
+covers techniques of integration including integration by parts, partial fractions, improper inte -
+grals, applications of integration, representing functions by infinite series, convergence and 
+divergence of series, parametric curves, and polar coordinates. (Prerequisites: C- or better in 
+MATH-181A or equivalent course.)",Lecture,6,,,4,"Spring, Summer"
+MATH-182R,Calculus II Recitation, (Co-requisites: MATH-182 or equivalent course.),Recitation,1,,,0,"Fall, Spring"
+MATH-185,Mathematics of Graphical Simulation I,"This is the first part of a two course sequence that aims at providing the mathematical tools 
 needed to manipulate graphical objects and to model and simulate the physical properties of 
 these objects. Topics from linear algebra, primarily in two and three dimensional space, ana -
 lytic geometry, and calculus will be presented. The emphasis is on linear algebra, particularly 
@@ -25117,8 +25154,26 @@ ical oscillations and waves, and data presentation/analysis. The course is taugh
 format that integrates the material traditionally found in separate lecture and laboratory cours -
 es. (Prerequisites: C- or better in MATH-181 or equivalent course.  Co-requisites: MATH-182 
 or equivalent course.)",Lec/Lab,6,,,4,"Fall, Spring"
-MATH-181,or MATH-181A or MATH-172 or equivalent ,course.Co-requisites:  MATH-182 or MATH-182A or MATH-172 or equivalent course.)  Lec/,Lab,7,,,4,"Fall, Spring"
-PHYS-211,"or PHYS-211A in the previous term.)  Lab 12, Credits 0 (Int)","PHYS-212 University Physics II
+PHYS-211A,University Physics IA,"This is a course in calculus-based physics for science and engineering majors whose perfor -
+mance on the Math Placement Exam resulted in their placement in MATH-181A. Topics include 
+kinematics, planar motion, Newton’s Laws, gravitation, work and energy, momentum and 
+impulse, conservation laws, systems of particles, rotational motion, static equilibrium, mechan -
+ical oscillations and waves, and data presentation/analysis. The course is taught in a workshop 
+format that integrates the material traditionally found in separate lecture and laboratory cours -
+es. (Prerequisites: C- or better in MATH-181 or MATH-181A or MATH-172 or equivalent 
+course.Co-requisites:  MATH-182 or MATH-182A or MATH-172 or equivalent course.)  Lec/",Lab,7,,,4,"Fall, Spring"
+PHYS-211B,University Physics I Bridge Workshop,"This a 3-week intensive workshop specifically aimed at strengthening the competencies of stu -
+dents who previously received a grade of D in University Physics I or IA in the immediately 
+preceding semester. Topics include kinematics, planar motion, Newton’s Laws, gravitation, 
+work and energy, momentum and impulse, conservation laws, systems of particles, rotational 
+motion, static equilibrium, mechanical oscillations and waves, and data presentation/analy -
+sis. The intent is not to provide an accelerated re-delivery of University Physics I or IA. This 
+course focuses on typical difficulties encountered by students in an interactive setting and pro -
+vides the opportunity for the students to demonstrate improved competencies in the subject 
+matter. There will also be some laboratory experiences that must be successfully completed. 
+A significant effort outside the classroom is also expected. (Prerequisites:  Earned grade of ""D"" 
+in PHYS-211 or PHYS-211A in the previous term.)  Lab 12, Credits 0 (Int)
+PHYS-212 University Physics II
 This course is a continuation of PHYS-211, University Physics I. Topics include electrostat -
 ics, Gauss' law, electric field and potential, capacitance, resistance, DC circuits, magnetic field, 
 Ampere's law, inductance, and geometrical and physical optics. The course is taught in a lec -

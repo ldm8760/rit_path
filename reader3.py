@@ -4,7 +4,7 @@ import csv
 INPUT_FILE = "textdump.txt"
 
 def makeMatches(text: str) -> None: 
-    full = r'\s*?(\w{4}-\d{3}|\w{4}-\d{3}H)\s(.*?)\n([\w\W\s]+?)\s+?(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP|Studio|Activity)(?:\s*?(\d))?.{0,2}(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)?(?:\s*?(\d))?.{0,2}\s*?Credits\s*?(\d|\d+ - \d+)\s+?\((Fall|Spring|Summer|Fall,\s*?Spring|Spring,\s*?Summer|Fall,\s*?Spring,\s*?Summer|Fall or Spring|Biannual)\)'
+    full = r'\s*?(\w{4}-\d{3}[AHRB]?)\s(.*?)\n([\w\W\s]+?)\s+?(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP|Studio|Activity)(?:\s*?(\d))?.{0,2}(Lecture|Lab|Recitation|Seminar|Lec\/Lab|Ind\s*?Study|CO OP)?(?:\s*?(\d))?.{0,2}\s*?Credits\s*?(\d|\d+ - \d+)\s+?\((Fall|Spring|Summer|Fall,\s*?Spring|Spring,\s*?Summer|Fall,\s*?Spring,\s*?Summer|Fall\s*?or\s*?Spring|Biannual)\)'
     pattern = re.compile(f'{full}')
     matches = re.findall(pattern, text)
     with open("data.csv", "w", encoding="utf-8") as f:
