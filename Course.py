@@ -31,7 +31,10 @@ class Course:
         basic_desc = self.__description.replace("\n", "")
         basic_text = re.search(r'Prerequisites:\s*?([\w\W\s]*)\)', basic_desc)
         if basic_text is not None:
-            return basic_text.group(1)
+            basic_text = basic_text.group(1)
+            basic_text.split(" ")
+            print(basic_text)
+            return basic_text
         else:
             return ""
 

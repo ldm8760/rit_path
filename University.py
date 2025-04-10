@@ -22,7 +22,7 @@ class University:
         self.__courseDict[course.getCode()] = course
 
     def getCourse(self, code: str) -> 'Course':
-        return self.__courseDict.get(code) # type: ignore
+        return self.__courseDict.get(code)  # type: ignore
     
     def findSubject(self, subject: str) -> list[str]:
         subject = subject.upper()
