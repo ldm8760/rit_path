@@ -6,7 +6,7 @@ def testFunc():
 
 
 def main():
-    uni = University.load_courses("data.csv")
+    uni = University.load_courses("data/data.csv")
     q = quit
 
     allowed_locals = {

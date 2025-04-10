@@ -1,7 +1,7 @@
 import PyPDF2
 
-INPUT_FILENAME: str = 'Undergrad_Course_Descriptions.pdf'
-OUTPUT_FILENAME: str = 'textdump.txt'
+INPUT_FILENAME: str = 'data/Undergrad_Course_Descriptions.pdf'
+OUTPUT_FILENAME: str = 'data/textdump.txt'
 
 
 def extract_info():
